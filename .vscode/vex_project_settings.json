@@ -1,0 +1,19 @@
+{
+	"extension": {
+		"version": "0.6.0",
+		"json": 2
+	},
+	"project": {
+		"name": "dinogame",
+		"description": "Enables you to play the chrome dino game (chrome://dino) on your brain!",
+		"creationDate": "6/25/2024, 10:08:46 AM",
+		"platform": "IQ2",
+		"language": "cpp",
+		"slot": 1,
+		"sdkVersion": "IQ2_20230627_09_00_00",
+		"cpp": {
+			"includePath": [],
+			"printf_float": false
+		}
+	}
+}
