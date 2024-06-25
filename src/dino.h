@@ -8,6 +8,9 @@
 using namespace std;
 using namespace vex;
 
+#define SCREEN_ROWS 5
+#define SCREEN_COLS 10
+
 enum class DSTATE { RUN, AIR, DUCK };
 
 enum class JUMPSTATE { UPFAST, UPSLOW, STOP, DOWNSLOW, DOWNFAST, NOTJUMP };
@@ -28,6 +31,9 @@ class dinogame {
   int minDist;
   bool canigen;
   vector<obsticle> onscreen;
+  DSTATE current;
+  JUMPSTATE cJump;
+  int dinoy = 0;
 
  public:
   dinogame(double speed, double cacti, double bird, int minDist);
@@ -38,7 +44,8 @@ class dinogame {
   bool endduck();
   DSTATE getstate();
   JUMPSTATE getjump();
-  void draw();
+  vector<string> getScreen();
+  void draw(vex::brain::lcd);
   void executeTick();
 }
 
