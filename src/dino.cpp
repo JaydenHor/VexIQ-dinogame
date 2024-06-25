@@ -53,4 +53,10 @@ JUMPSTATE dinogame::getjump() { return cJump; }
 
 vector<string> dinogame::getScreen() {
     vector<string> output(SCREEN_ROWS, string(' ', SCREEN_COLS));
+    // Dinosour
+    output[0][dinoy] = '@';
+    // Obsticles
+    for(obsticle i : onscreen){
+        
+    }
 }

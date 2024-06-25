@@ -34,7 +34,8 @@ class dinogame {
   DSTATE current;
   JUMPSTATE cJump;
   int dinoy = 0;
-
+  obsticle generateObsticle();
+  
  public:
   dinogame(double speed, double cacti, double bird, int minDist);
   ~dinogame();
