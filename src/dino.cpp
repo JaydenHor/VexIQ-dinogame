@@ -15,4 +15,6 @@ dinogame::dinogame(double spd, double c, double b, int md) {
 
 dinogame::~dinogame(){}
 
-void dinogame::changeSpeed(double speed) {}
+void dinogame::changeSpeed(double spd) {
+    speed = spd;
+}
