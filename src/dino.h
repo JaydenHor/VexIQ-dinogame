@@ -24,18 +24,22 @@ struct obsticle {
 class dinogame {
  protected:
   random_device RNG;
+  mt19937 prng;
+  discrete_distribution<int> obsticleRand;
   double speed = 18;
   double cactiF;
   double birdF;
   double nothingF;
   int minDist;
-  bool canigen;
+  int currentCount;
   vector<obsticle> onscreen;
   DSTATE current;
   JUMPSTATE cJump;
   int dinoy = 0;
-  obsticle generateObsticle();
-  
+  unsigned long long score = 0;
+  vector<pair<int, int>> cactiPossible;
+  vector<int> birdPossible;
+
  public:
   dinogame(double speed, double cacti, double bird, int minDist);
   ~dinogame();
@@ -47,7 +51,11 @@ class dinogame {
   JUMPSTATE getjump();
   vector<string> getScreen();
   void draw(vex::brain::lcd);
-  void executeTick();
-}
+  /**
+   * @brief Executes a single tick of the dino game
+   * @return -1 for die, or a non-negative integer as the score
+   */
+  unsigned long long executeTick();
+};
 
 #endif
