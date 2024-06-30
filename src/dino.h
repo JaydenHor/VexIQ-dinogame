@@ -26,7 +26,6 @@ class dinogame {
   random_device RNG;
   mt19937 prng;
   discrete_distribution<int> obsticleRand;
-  double speed = 18;
   double cactiF;
   double birdF;
   double nothingF;
@@ -41,7 +40,7 @@ class dinogame {
   vector<int> birdPossible;
 
  public:
-  dinogame(double speed, double cacti, double bird, int minDist);
+  dinogame(double cacti, double bird, int minDist);
   ~dinogame();
   void changeSpeed(double speed);
   bool jump();
@@ -56,6 +55,7 @@ class dinogame {
    * @return -1 for die, or a non-negative integer as the score
    */
   unsigned long long executeTick();
+  void operator=(dinogame a);
 };
 
 #endif

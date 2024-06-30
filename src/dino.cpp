@@ -25,8 +25,7 @@ Iter select_randomly(Iter start, Iter end) {
   return select_randomly(start, end, gen);
 }
 
-dinogame::dinogame(double spd, double c, double b, int md) {
-  speed = spd;
+dinogame::dinogame(double c, double b, int md) {
   cactiF = c;
   birdF = b;
   if (cactiF + birdF > 1) {
@@ -55,8 +54,6 @@ dinogame::dinogame(double spd, double c, double b, int md) {
 }
 
 dinogame::~dinogame() {}
-
-void dinogame::changeSpeed(double spd) { speed = spd; }
 
 bool dinogame::jump() {
   if (current == DSTATE::AIR || current == DSTATE::DUCK) {
@@ -104,9 +101,8 @@ vector<string> dinogame::getScreen() {
 
 void dinogame::draw(vex::brain::lcd b) {
   for (string i : this->getScreen()) {
-    // b.print(i.c_str());
-    // b.newLine();
-    cout << i << "\n";
+    b.print(i.c_str());
+    b.newLine();
   }
 }
 
