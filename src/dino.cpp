@@ -2,12 +2,6 @@
 
 #include <vex.h>
 
-#include <algorithm>
-#include <cassert>
-#include <random>
-#include <stdexcept>
-#include <vector>
-#include <iostream>
 
 #define MP(a, b) (make_pair((a), (b)))
 
@@ -30,7 +24,7 @@ dinogame::dinogame(double c, double b, int md) {
   birdF = b;
   if (cactiF + birdF > 1) {
     // throw out_of_range("Probabilities of cacti and bird are too large");
-    assert(false);
+    // assert(false);
   }
   nothingF = 1 - (cactiF + birdF);
   minDist = md;
@@ -136,7 +130,8 @@ unsigned long long dinogame::executeTick() {
         break;
       default:
         // throw logic_error("Something has gone seriously wrong");
-        assert(false);
+        // assert(false);
+        return -100;
     }
   }
   // Obsticle check
